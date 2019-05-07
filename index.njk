@@ -1,0 +1,48 @@
+---
+layout: layouts/base.njk
+intro:
+  title: Shine them anyway
+  copy: |
+    I’m a front-end developer living and working in East London. I currently lead the front-end team at Browser London where I help build enterprise web-apps. Prior to that I managed the digital side of Overture London’s design projects and hosting infrastructure.
+work:
+  - title: Security publishing platform
+    description: | 
+      Working in conjunction with our in-house UX designer and backend engineering team, I designed and developed an isomorphic frontend for a risk-analysis publishing platform.
+
+      Features included geographic risk reporting; PDF generation; an interactive WebGL map; a bespoke content-builder for editorials; a custom analytics micro-service; and an administrative control panel for resellers. Built using React, Redux and Typescript, the application also takes a functional approach through extensive use of Ramada and Recompose.
+    skills:
+      - Twig
+      - Pattern Library
+  - title: Document sharing portal
+    description: |
+      I was responsible for designing and building a pattern library for a document sharing portal built on Symfony. Each pattern was developed in Pattern-lab (using Twig) then directly integrated into the production application. This ‘living’ pattern-library continues to grow and evolve alongside the application, now encompassing complex UI patterns such as an ‘inbox’ style workflow. Built with Twig, vanilla JS and SASS.
+    skills:
+      - React (SSR)
+      - Redux
+      - Node
+      - TypeScript
+  - title: The Moon up Above
+    description: |
+      Using a custom WordPress REST API implementation and React/Redux, I designed and developed a jewellery e-commerce application for The Moon up Above. Bespoke inventory management was built to avoid the overkill of a third-party plugin, with payments processed directly using Stripe. We’re currently scoping out a new custom backend built on Laravel, as well as a revised isomorphic frontend.
+    skills:
+      - React
+      - Redux
+---
+
+<h1>{{ intro.title }}</h1>
+{{ intro.copy | md | safe }}
+
+<h2>Things I've made</h2>
+<p>And can't really talk about</p>
+
+{% for workItem in work %}
+  <h3>{{ workItem.title }}</h3>
+  {{ workItem.description | md | safe }}
+  <h4>Buzzwords</h4>
+  <ul>
+    {% for skill in workItem.skills %}
+      <li>{{ skill }}</li>
+    {% endfor %}
+  </ul>
+{% endfor %}
+

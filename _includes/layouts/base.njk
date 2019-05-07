@@ -1,0 +1,27 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>Jay Freestone</title>
+  <title>{{ renderData.title or title or metadata.title }}</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <link rel="stylesheet" href="{{ '/css/index.css' | url }}">
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+    <header>
+      <h1 class="home"><a href="{{ '/' | url }}">{{ metadata.title }}</a></h1>
+      <ul class="nav">
+        {%- for nav in collections.nav | reverse -%}
+        <li class="nav-item{% if nav.url == page.url %} nav-item-active{% endif %}"><a href="{{ nav.url | url }}">{{ nav.data.navTitle }}</a></li>
+        {%- endfor -%}
+      </ul>
+    </header>
+    {{ content | safe }}
+</body>
+</html>

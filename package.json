@@ -1,0 +1,14 @@
+{
+  "name": "jf2019",
+  "version": "1.0.0",
+  "description": "",
+  "main": ".eleventy.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "markdown-it": "^8.4.2"
+  }
+}

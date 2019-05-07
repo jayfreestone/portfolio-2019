@@ -3,7 +3,11 @@ module.exports = function(eleventyConfig) {
         return require('markdown-it')().render(str);
     });
 
+    eleventyConfig.addPassthroughCopy('dist');
+    eleventyConfig.addPassthroughCopy('static');
+
     return {
+        passthroughFileCopy: true,
         templateFormats: [
             'md',
             'njk',

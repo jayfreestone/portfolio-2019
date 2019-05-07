@@ -1,14 +1,18 @@
 {
-  "name": "jf2019",
+  "name": "jf",
   "version": "1.0.0",
   "description": "",
   "main": ".eleventy.js",
   "config": {
-
+    "dir": {
+      "src": "src",
+      "dist": "dist"
+    }
   },
   "scripts": {
     "dev": "npm run watch:css && npm run eleventy --serve",
-    "watch:css": "node-sass --watch src/scss/*.scss -o dist/css"
+    "watch:css": "npm run build:css && npm run build:css -- --watch",
+    "build:css": "node-sass $npm_package_config_dir_src/scss/*.scss -o $npm_package_config_dir_dist/css"
   },
   "author": "",
   "license": "ISC",

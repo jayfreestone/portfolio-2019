@@ -3,7 +3,10 @@ module.exports = function(eleventyConfig) {
         return require('markdown-it')().render(str);
     });
 
-    eleventyConfig.addPassthroughCopy('dist');
+    eleventyConfig.setBrowserSyncConfig({
+        files: ['_site/dist/css/*.css', '_site/dist/scripts/*.js']
+      });
+
     eleventyConfig.addPassthroughCopy('static');
 
     return {

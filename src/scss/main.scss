@@ -1,2 +1,6 @@
-// @import '~normalize.css/normalize';
+@import '~normalize.css/normalize';
 @import 'base/reset';
+
+body {
+    background: blue;
+}

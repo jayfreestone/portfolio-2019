@@ -10,14 +10,25 @@
     }
   },
   "scripts": {
-    "dev": "npm run watch:css && npm run eleventy --serve",
-    "watch:css": "npm run build:css && npm run build:css -- --watch",
-    "build:css": "node-sass $npm_package_config_dir_src/scss/*.scss -o $npm_package_config_dir_dist/css"
+    "dev": "concurrently \"npm:watch:assets\" \"npm run watch:serve\"",
+    "watch:serve": "eleventy --serve",
+    "build:assets": "NODE_ENV=production webpack -p --mode=production",
+    "watch:assets": "NODE_ENV=development webpack -w --mode=development"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "concurrently": "^4.1.0",
+    "css-loader": "^2.1.1",
+    "eleventy": "^0.2.0",
     "markdown-it": "^8.4.2",
-    "node-sass": "^4.12.0"
-  }
+    "mini-css-extract-plugin": "^0.6.0",
+    "node-sass": "^4.12.0",
+    "normalize.css": "^8.0.1",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.2"
+  },
+  "dependencies": {}
 }

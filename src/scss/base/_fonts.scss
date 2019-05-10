@@ -1,0 +1,44 @@
+@font-face {
+  font-family: 'graphik';
+  src: url('/static/fonts/graphik/subset-a25573ad4f912b1ffce4dc60a7e784a9.woff2') format('woff2'),
+  url('/static/fonts/graphik/subset-a25573ad4f912b1ffce4dc60a7e784a9.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'graphik';
+  src: url('/static/fonts/graphik/subset-e5983b81cc029e8023752a58152fb5a5.woff2') format('woff2'),
+  url('/static/fonts/graphik/subset-e5983b81cc029e8023752a58152fb5a5.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'graphik';
+  src: url('/static/fonts/graphik/subset-6578d4d85a258f33f7c3b077a205c55a.woff2') format('woff2'),
+  url('/static/fonts/graphik/subset-6578d4d85a258f33f7c3b077a205c55a.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'graphik';
+  src: url('/static/fonts/graphik/subset-8d6eca69d32d86c5674f85a155fae6a7.woff2') format('woff2'),
+  url('/static/fonts/graphik/subset-8d6eca69d32d86c5674f85a155fae6a7.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ibm-mono';
+  src: url('/static/fonts/ibm-mono/ibmplexmono-regular.woff2') format('woff2'),
+  url('/static/fonts/ibm-mono/ibmplexmono-regular.woff2') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

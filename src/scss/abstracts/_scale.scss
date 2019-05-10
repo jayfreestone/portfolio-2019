@@ -1,0 +1,20 @@
+$modularscale: (
+  base: 1rem,
+  ratio: 1.125
+);
+
+:root {
+  --fs-sm: #{ms(-1)};
+  --fs-base: #{ms(0)};
+  --fs-md: #{ms(3)};
+  --fs-lg: #{ms(5)};
+  --fs-xl: #{ms(6)};
+  --fs-xxl: #{ms(8)};
+
+  @media (min-width: 40rem) {
+    --fs-md: #{ms(4)};
+    --fs-lg: #{ms(8)};
+    --fs-xl: #{ms(11)};
+    --fs-xxl: #{ms(12)};
+  }
+}

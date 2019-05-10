@@ -1,0 +1,30 @@
+.site-header {
+  @include container;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: ms(2);
+  margin-bottom: ms(2);
+
+  a {
+    color: var(--t-base);
+    text-decoration: none;
+  }
+}
+
+.site-header__title {
+  font-size: var(--fs-base);
+  margin-right: auto;
+}
+
+.site-header__nav {
+  > ul {
+    @include u-space;
+    list-style: none;
+    padding: 0;
+  }
+
+  li {
+    display: inline-block;
+  }
+}

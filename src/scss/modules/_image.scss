@@ -1,0 +1,12 @@
+.image {
+  position: relative;
+  height: 0;
+  padding-bottom: calc((var(--image-height) / var(--image-width)) * 100%);
+
+  > img {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+}

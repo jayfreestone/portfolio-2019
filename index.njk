@@ -1,11 +1,14 @@
 ---
 layout: layouts/base.njk
 intro:
-  title: Shine them anyway
+  title: Shine them<br/> anyway
   copy: |
     I’m a front-end developer living and working in East London. I currently lead the front-end team at Browser London where I help build enterprise web-apps. Prior to that I managed the digital side of Overture London’s design projects and hosting infrastructure.
+
+    [More blurb](/about)
 work:
   - title: Security publishing platform
+    date: 2018
     description: | 
       Working in conjunction with our in-house UX designer and backend engineering team, I designed and developed an isomorphic frontend for a risk-analysis publishing platform.
 
@@ -14,35 +17,76 @@ work:
       - Twig
       - Pattern Library
   - title: Document sharing portal
+    date: 2017
     description: |
-      I was responsible for designing and building a pattern library for a document sharing portal built on Symfony. Each pattern was developed in Pattern-lab (using Twig) then directly integrated into the production application. This ‘living’ pattern-library continues to grow and evolve alongside the application, now encompassing complex UI patterns such as an ‘inbox’ style workflow. Built with Twig, vanilla JS and SASS.
+      I was responsible for designing and building a pattern library for a document sharing portal built on Symfony. Each pattern was developed in Pattern-lab (using Twig) then directly integrated into the production application.
+      
+      This ‘living’ pattern-library continues to grow and evolve alongside the application, now encompassing complex UI patterns such as an ‘inbox’ style workflow. Built with Twig, vanilla JS and SASS.
     skills:
       - React (SSR)
       - Redux
       - Node
       - TypeScript
   - title: The Moon up Above
+    date: 2016
     description: |
-      Using a custom WordPress REST API implementation and React/Redux, I designed and developed a jewellery e-commerce application for The Moon up Above. Bespoke inventory management was built to avoid the overkill of a third-party plugin, with payments processed directly using Stripe. We’re currently scoping out a new custom backend built on Laravel, as well as a revised isomorphic frontend.
+      Using a custom WordPress REST API implementation and React/Redux, I designed and developed a jewellery e-commerce application for [The Moon up Above](https://www.themoonupabove.co.uk/).
+      
+      Bespoke inventory management was built to avoid the overkill of a third-party plugin, with payments processed directly using Stripe. We’re currently scoping out a new custom backend built on Laravel, as well as a revised isomorphic frontend.
     skills:
       - React
       - Redux
 ---
 
-<h1>{{ intro.title }}</h1>
-{{ intro.copy | md | safe }}
+<div class="home">
+  <section class="home__intro">
+    <div class="intro">
+      <div class="home__intro-image intro__photo">
+        <div class="image" style="--image-height: 149; --image-width: 265;">
+          <img
+            src="/dist/img/jay-freestone-basel-chair-265-149.jpg" alt=""
+            srcset="/dist/img/jay-freestone-basel-chair-265-149.jpg 265w,
+                    /dist/img/jay-freestone-basel-chair-530-298.jpg 530w,
+                    /dist/img/jay-freestone-basel-chair-1060-596.jpg 1060w"
+          >
+        </div>
+      </div>
+      <h1 class="intro__title">{{ intro.title | safe }}</h1>
+      <div class="intro__copy">
+        {{ intro.copy | md | safe }}
+      </div>
+    </div>
+  </section>
 
-<h2>Things I've made</h2>
-<p>And can't really talk about</p>
+  <div class="home__work">
+    <div class="container">
+      <section class="work">
+        <div class="work__intro">
+          <h2 class="work__title">Things<br/> I've made</h2>
+          <p>And can't really talk about</p>
+        </div>
 
-{% for workItem in work %}
-  <h3>{{ workItem.title }}</h3>
-  {{ workItem.description | md | safe }}
-  <h4>Buzzwords</h4>
-  <ul>
-    {% for skill in workItem.skills %}
-      <li>{{ skill }}</li>
-    {% endfor %}
-  </ul>
-{% endfor %}
+        <div class="work__items">
+          {% for workItem in work %}
+            <div class="work-item">
+              <h3 class="work-item__title">{{ workItem.title }}</h3>
+              <time class="work-item__date" datetime="{{ workItem.date }}">{{ workItem.date }}</time>
+              <div class="prose work-item__description">
+                {{ workItem.description | md | safe }}
+              </div>
+              <div class="work-item__meta">
+                <h4>Buzzwords</h4>
+                <ul class="work-item__meta-list">
+                  {% for skill in workItem.skills %}
+                    <li>{{ skill }}</li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
 

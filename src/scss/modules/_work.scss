@@ -1,0 +1,33 @@
+.work {
+  display: grid;
+  grid-gap: ms(0);
+  grid-template-areas: 'intro' 'items';
+
+  @media (min-width: 35em) {
+    grid-gap: ms(4);
+    grid-template-columns: 1fr 7fr;
+    grid-template-areas: 'intro intro' '. items';
+  }
+
+  @media (min-width: 50em) {
+    grid-template-columns: 1fr 2fr 5fr;
+    grid-template-areas: '. intro items';
+  }
+}
+
+.work__intro {
+  grid-area: intro;
+}
+
+.work__title {
+  font-size: var(--fs-lg);
+
+  @media (min-width: 80em) {
+    margin-top: ms(14);
+  }
+}
+
+.work__items {
+  @include u-space(ms(6));
+  grid-area: items;
+}

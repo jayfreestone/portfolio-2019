@@ -1,6 +1,24 @@
 @import '~normalize.css/normalize';
-@import 'base/reset';
+@import '~modularscale-sass/stylesheets/modularscale';
 
-body {
-    background: blue;
-}
+@import 'abstracts/scale';
+@import 'abstracts/u-space';
+@import 'abstracts/type';
+@import 'abstracts/u-space';
+@import 'abstracts/fluid-type';
+@import 'abstracts/theme';
+@import 'abstracts/container';
+
+@import 'base/reset';
+@import 'base/fonts';
+@import 'base/type';
+@import 'base/base';
+
+@import 'modules/site-header';
+@import 'modules/prose';
+@import 'modules/image';
+@import 'modules/intro';
+@import 'modules/work';
+@import 'modules/work-item';
+
+@import 'pages/home';

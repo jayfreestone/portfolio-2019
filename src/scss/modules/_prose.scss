@@ -1,0 +1,15 @@
+.prose {
+  --prose-mt: var(--fs-base);
+
+  p + p {
+    text-indent: var(--fs-base);
+  }
+
+  > * + *:not(p) {
+    margin-top: var(--prose-mt);
+  }
+
+  h2 {
+    --prose-mt: var(--fs-md)
+  }
+}

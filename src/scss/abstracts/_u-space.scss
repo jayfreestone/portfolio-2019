@@ -1,0 +1,22 @@
+@mixin u-space($gap: 1rem, $padding: false, $clear: false) {
+  margin-top: calc(#{$gap} * -1);
+  margin-left: calc(#{$gap}  * -1);
+  
+  @if ($clear) {
+    &::after {
+      display: block;
+      content: "";
+      clear: both;
+    }
+  }
+  
+  > * {
+    @if ($padding) {
+      padding-top: $gap;
+      padding-left: $gap;
+    } @else {
+      margin-top: $gap;
+      margin-left: $gap;
+    }
+  }
+}

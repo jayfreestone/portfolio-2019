@@ -6,28 +6,46 @@
   "config": {
     "dir": {
       "src": "src",
-      "dist": "dist"
+      "dist": "_site/dist/img"
+    },
+    "image_sizes": {
+      "intro-sm": [265, 149],
+      "intro-md": [530, 298],
+      "intro-lg": [1060, 596],
+      "about-sm": [320, 320],
+      "about-md": [640, 640],
+      "about-lg": [1280, 1280]
     }
   },
   "scripts": {
-    "dev": "concurrently \"npm:watch:assets\" \"npm run watch:serve\"",
+    "dev": "concurrently \"npm:watch:assets\"  \"npm run watch:img\" \"npm run watch:serve\"",
     "watch:serve": "eleventy --serve",
     "build:assets": "NODE_ENV=production webpack -p --mode=production",
-    "watch:assets": "NODE_ENV=development webpack -w --mode=development"
+    "watch:assets": "NODE_ENV=development webpack -w --mode=development",
+    "build:img": "mkdir -p $npm_package_config_dir_dist && node buildScripts/generate-crops",
+    "prewatch:img": "npm run build:img",
+    "watch:img": "chokidar \"$npm_package_config_dir_src/img/**/*\" -c \"npm run build:img\""
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "chokidar-cli": "^1.2.2",
     "concurrently": "^4.1.0",
     "css-loader": "^2.1.1",
     "eleventy": "^0.2.0",
+    "fs": "0.0.1-security",
     "markdown-it": "^8.4.2",
     "mini-css-extract-plugin": "^0.6.0",
+    "modularscale-sass": "^3.0.8",
     "node-sass": "^4.12.0",
     "normalize.css": "^8.0.1",
+    "path": "^0.12.7",
+    "postcss-loader": "^3.0.0",
     "sass-loader": "^7.1.0",
+    "sharp": "^0.22.1",
     "style-loader": "^0.23.1",
     "tailwindcss": "^0.7.4",
+    "util": "^0.12.0",
     "webpack": "^4.30.0",
     "webpack-cli": "^3.3.2"
   },

@@ -1,0 +1,11 @@
+@mixin container {
+  max-width: var(--s-max-width);
+  padding-left: var(--h-pad);
+  padding-right: var(--h-pad);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container {
+  @include container;
+}

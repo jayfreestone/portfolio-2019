@@ -1,0 +1,13 @@
+:root {
+  --t-base: #212529;
+  --t-accent: #e03131;
+  --t-bg: #f1f3f5;
+  --t-bg-lift: #f8f9fa;
+
+  --h-pad: 1.266rem;
+  --s-max-width: 100rem;
+
+  @media (min-width: 30em) {
+    --h-pad: 3vw;
+  }
+}

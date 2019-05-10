@@ -1,0 +1,30 @@
+html {
+  @include fluid-type(40rem, 80rem, 1rem, 1.125rem);
+}
+
+body {
+  font-family: var(--font-base);
+  line-height: 1.4;
+}
+
+a {
+  --link-color: var(--t-accent);
+  color: var(--link-color);
+}
+
+h1,
+h2 {
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: var(--fs-xl);
+}
+
+h2 {
+  font-size: var(--fs-md);
+}
+
+h3 {
+  font-size: var(--fs-base);
+}

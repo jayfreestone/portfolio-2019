@@ -11,3 +11,9 @@ html {
 body {
   background-color: var(--t-bg);
 }
+
+img {
+  vertical-align: middle;
+  max-width: 100%;
+  height: auto;
+}

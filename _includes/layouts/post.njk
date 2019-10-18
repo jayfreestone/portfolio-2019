@@ -1,0 +1,23 @@
+---
+layout: layouts/base.njk
+---
+
+<main class="container">
+    <article class="post">
+        <header class="post__header">
+            {% if headerImage %}
+                <div class="post__graphic">
+                    {% img headerImage, "Screenshot of text containing a link, followed by an icon that indicates it's external." %}
+                </div>
+            {% endif %}
+            <h1 class="post__title">{{ title }}</h1>
+            <time datetime="{{ date }}">{{ date | readableDate }}</time>
+{#            {{ excerpt | md | safe }}#}
+        </header>
+        <div class="post__body">
+            <div class="prose">
+                {{ content | safe }}
+            </div>
+        </div>
+    </article>
+</main>

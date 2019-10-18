@@ -1,5 +1,6 @@
 @import '~normalize.css/normalize';
 @import '~modularscale-sass/stylesheets/modularscale';
+@import '~prismjs/themes/prism-okaidia';
 
 @import 'abstracts/scale';
 @import 'abstracts/u-space';
@@ -20,5 +21,10 @@
 @import 'modules/intro';
 @import 'modules/work';
 @import 'modules/work-item';
+@import 'modules/post';
+@import 'modules/post-preview';
+@import 'modules/post-list';
+@import 'modules/code';
 
 @import 'pages/home';
+@import 'pages/writing';

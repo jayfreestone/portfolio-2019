@@ -1,0 +1,27 @@
+$writing-bp: 60em;
+
+.writing {
+  //@media(min-width: $writing-bp) {
+  //  display: grid;
+  //  grid-template-columns: repeat(8, 1fr);
+  //}
+}
+
+.writing__header {
+  //@media(min-width: $writing-bp) {
+  //  grid-column: 2 / -1;
+  //}
+}
+
+.writing__post-list {
+  //@media(min-width: $writing-bp) {
+  //  grid-column: 2 / -1;
+  //}
+}
+
+.writing__post-list-meta {
+  //@media(min-width: $writing-bp) {
+  //  margin-left: -13ch;
+  //}
+}
+

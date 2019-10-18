@@ -1,0 +1,23 @@
+.post {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: 'header' 'body';
+  //grid-template-columns: ms(20) 1fr;
+  //grid-template-areas: '. header' '. body';
+  //grid-template-columns: repeat(8, 1fr);
+}
+
+.post__header {
+  grid-area: header;
+  //grid-column: 2/6;
+}
+
+.post__title {
+  font-size: var(--fs-lg);
+}
+
+.post__body {
+  grid-area: body;
+  min-width: 0;
+  //grid-column: 2/6;
+}

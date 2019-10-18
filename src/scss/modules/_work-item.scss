@@ -1,6 +1,6 @@
 .work-item {
   display: grid;
-  grid-gap: ms(-3);
+  grid-gap: ms(0);
   grid-template-columns: 1fr max-content;
   grid-template-areas: 'title date' 'description description' 'meta meta';
 
@@ -15,6 +15,7 @@
   grid-area: date;
   font-family: var(--font-mono);
   font-size: var(--fs-sm);
+  color: var(--t-muted);
 }
 
 .work-item__title {
@@ -35,7 +36,7 @@
   padding-left: 0;
 
   @media (max-width: 80em) {
-    @include u-space;
+    @include u-space(ms(-3));
 
     > li {
       display: inline-block;

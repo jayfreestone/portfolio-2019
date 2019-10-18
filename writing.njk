@@ -1,8 +1,36 @@
 ---
 layout: layouts/base.njk
 tags:
-  - nav
+- nav
 navTitle: Writing
 ---
 
-<h1>Writing</h1>
+<div class="container">
+    <div class="writing">
+        <div class="writing__header">
+            <h1>Writing</h1>
+        </div>
+
+        <div class="writing__post-list">
+            {% set postlist = collections.writing %}
+
+            <ol class="post-list">
+                {% for post in postlist | reverse %}
+                    <li>
+                        <div class="post-preview">
+                            <div class="post-preview__main">
+                                <div class="post-preview__content">
+                                    <h2 class="post-preview__title"><a href="{{ post.url | url }}">{{ post.data.title }}</a></h2>
+                                    <div class="post-preview__excerpt">{{ post.data.excerpt | safe }}</div>
+                                </div>
+                            </div>
+                            <div class="writing__post-list-meta post-preview__meta">
+                                <time class="post-preview__date" datetime="{{ post.date }}">{{ post.date | readableDate }}</time>
+                            </div>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ol>
+        </div>
+    </div>
+</div>

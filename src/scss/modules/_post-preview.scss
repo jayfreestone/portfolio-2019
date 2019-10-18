@@ -1,0 +1,41 @@
+.post-preview {
+  --bp-post-preview: 45rem;
+  // Eyeball
+  @include u-space(ms(-12));
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+}
+
+.post-preview__content {
+  @include u-space(ms(-6));
+}
+
+.post-preview__main {
+  flex-grow: 9999;
+  flex-basis: calc((var(--bp-post-preview) - 100%) * 999);
+}
+
+.post-preview__meta {
+  flex-grow: 1;
+
+  //width: 13ch;
+}
+
+.post-preview__title {
+  > a {
+    color: var(--t-base);
+    text-decoration-color: var(--t-accent);
+  }
+}
+
+.post-preview__excerpt {
+  max-width: 35rem;
+}
+
+.post-preview__date {
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  line-height: calc(var(--fs-md) * 1.1);
+  padding-right: ms(4);
+}

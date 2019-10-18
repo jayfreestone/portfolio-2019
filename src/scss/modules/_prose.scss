@@ -1,15 +1,54 @@
 .prose {
   --prose-mt: var(--fs-base);
+  --quote-mark-width: #{ms(6)};
 
-  p + p {
-    text-indent: var(--fs-base);
-  }
-
-  > * + *:not(p) {
+  > * + * {
     margin-top: var(--prose-mt);
   }
 
   h2 {
     --prose-mt: var(--fs-md)
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    &[id] {
+      &:before {
+        content: '';
+        display: block;
+        padding-bottom: ms(5);
+        margin-top: calc(#{ms(5)} * -1);
+        pointer-events: none;
+      }
+    }
+  }
+
+  blockquote {
+    &:before {
+      float: left;
+      content: '\201C';
+      line-height: 1;
+      font-size: var(--fs-lg);
+      font-family: var(--font-mono);
+      width: var(--quote-mark-width);
+      margin-left: calc(var(--quote-mark-width) * -1);
+      color: var(--t-muted);
+    }
+
+    &,
+    + figcaption {
+      padding-left: var(--quote-mark-width);
+    }
+
+    + figcaption {
+      font-size: var(--fs-sm);
+      margin-top: calc(var(--prose-mt) / 2);
+
+      cite {
+        font-style: normal;
+      }
+    }
   }
 }
